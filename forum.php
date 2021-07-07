@@ -26,6 +26,7 @@ $table="post";
 
 </head>
 <body>
+  
 <?php include './partials/header.php';?>
 
 
