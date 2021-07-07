@@ -76,6 +76,9 @@
         color:white;
         padding:10px;
         margin-top:70px;
+        position: absolute;
+        width:100%;
+        bottom:0;
     }
     footer p{
         margin-top:20px;
