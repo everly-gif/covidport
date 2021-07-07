@@ -6,13 +6,13 @@ $table="post";
 $alert=false;
 $erroralert=false;
 if(isset($_POST['submit'])){
-    $title=$_POST['title'];
-    $desc=$_POST['short-desc'];
+    $title=addslashes($_POST['title']);
+    $desc=addslashes($_POST['short-desc']);
     $content=$_POST['editor'];
     $date=date('Y-m-d h:i:s');
     $userid=$_SESSION['user_id'];
     $author=$_SESSION['username'];
-    $query=$mysqli->query("INSERT INTO $table VALUES ('','$title','$desc','$content','$userid','$author','$date')");
+    $query=$mysqli->query("INSERT INTO `$table` VALUES ('','$title','$desc','$content','$userid','$author','$date')");
     if($query){
         $alert=true;
     }

@@ -70,10 +70,7 @@
   .dropdown:hover .dropdown-content {
       display: block;
     }
-    body{
-      position: relative;
-      min-height: 100vh;
-    }
+   
     footer{
         text-align: center;
         background-color: #198754;
@@ -88,4 +85,6 @@
     footer p{
         margin-top:20px;
     }
-  
+   .card{
+     margin:20px 0px;
+   }
