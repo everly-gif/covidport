@@ -2,11 +2,7 @@
 session_start();
 include './partials/db.php';?>
 
-<?php
 
-include './partials/header.php';
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,6 +23,11 @@ include './partials/header.php';
     <link rel="stylesheet" href="css/post.css?v=<?php echo time();?>">
 </head>
 <body>
+<?php
+
+include './partials/header.php';
+
+?>
 <div class="big-container">
 <div class="container">
 <?php
@@ -55,9 +56,19 @@ include './partials/header.php';
         <button class="btn btn-success" type="button" onclick="addComment()" id="submit" name="submit">Post</button>
         
     </form>
+    
     <h2 style="margin-top:20px;">Comments</h2>
     <div id="display-comment"></div>
 </div>
+
+      <div class='card card-body replyRow' style='margin-left:15px; display:none;' id="im">
+        <form id="form"> 
+        <textarea  class='form-control' id="reply_content" placeholder='Leave a comment'></textarea><br>
+        <button type='button' class='btn btn-success' onclick='addReply(this)'>Post</button>
+        <button type='button' class='btn btn-danger' onclick='$(".replyRow").hide();'>Close</button>
+        </form>
+      </div>
+      
 </div>
 <?php include './partials/footer.php';?>
 
@@ -72,7 +83,9 @@ include './partials/header.php';
 <script>
 $(document).ready(function(){
   displayRecords();
+  
 })
+
 function displayRecords(){
 var post_id=<?php echo $_GET['id'];?>;
       
@@ -89,6 +102,7 @@ var post_id=<?php echo $_GET['id'];?>;
         
 
 }
+
 
 function addComment(){
   var content=$('#comment_content').val();
@@ -109,12 +123,50 @@ function addComment(){
      },
      success:function(data,status){
         document.getElementById("mainform").reset();
+        
         displayRecords();
      },
      
 
   });
 }
+function addReply(caller){
+  var cont=$('#reply_content').val();
+  var reply_auth= '<?php echo $_SESSION['username'];?>';
+  var user_id=<?php echo $_SESSION['user_id'];?>;
+  var postid=<?php echo $_GET['id'];?>;
+  var parent_id=$(caller).parent().parent().next().attr("id");
+  
+  $.ajax({
+     
+     url:"addcomment.php",
+     type:'post',
+     data:{cont:cont,
+     reply_auth:reply_auth,
+     user_id:user_id,
+     postid:postid,
+     parent_id:parent_id
+     
+     
+     },
+     success:function(data,status){
+        document.getElementById("form").reset();
+        $('.replyRow').hide();
+        displayRecords();
+        
+     },
+     
+
+  });
+}
+
+function reply(caller){
+  $('.replyRow').insertAfter($(caller).parent().parent().parent());
+  $('.replyRow').show();
+ 
+}
+
+
 </script>
 
 </html>
