@@ -58,7 +58,7 @@ include './partials/header.php';
         
     </form>
     
-    <h2 style="margin-top:20px;">Comments</h2>
+    
     <div id="display-comment"></div>
 </div>
 
@@ -166,7 +166,19 @@ function reply(caller){
   $('.replyRow').show();
  
 }
-
+function deleteComment(deleteid){
+  var con=confirm("Are you sure?");
+  if(con==true){
+    $.ajax({
+      url:"addcomment.php",
+      type:"post",
+      data:{deleteid:deleteid},
+      success:function(data,status){
+         displayRecords();
+      }
+    });
+  }
+}
 
 </script>
 
