@@ -1,6 +1,7 @@
 <?php
 session_start();
-include './partials/db.php';?>
+include './partials/db.php';
+?>
 
 
 
