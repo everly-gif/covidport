@@ -26,6 +26,13 @@ if(isset($_POST['displayrecord']) && isset ($_POST['post_id'])){
           }
           echo "</div>
         </div>
+      </div>
+      <div class='card card-body replyRow' style='margin-left:15px; display:none;' >
+        <form id='form'> 
+        <textarea  class='form-control' id='reply_content' placeholder='Leave a comment'></textarea><br>
+        <button type='button' class='btn btn-success' onclick='addReply(this)'>Post</button>
+        <button type='button' class='btn btn-danger' onclick='closed(this);'>Close</button>
+        </form>
       </div><div class='replies'  style='padding-left:48px;' id=".$data['comment_id'].">";
       $parent_id=$data['comment_id'];
       $reply=$mysqli->query("SELECT * FROM $table WHERE `post_id` =  '$post_id' AND `parent_id` ='$parent_id' ORDER BY `comment_id` ASC ");
@@ -87,5 +94,6 @@ if(isset($_POST['displayrecord']) && isset ($_POST['post_id'])){
       $query="DELETE FROM $table WHERE `comment_id`=$comment_id OR `parent_id`= $comment_id";
       $res=$mysqli->query($query);
   }
+  
 
 ?>

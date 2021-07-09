@@ -62,13 +62,6 @@ include './partials/header.php';
     <div id="display-comment"></div>
 </div>
 
-      <div class='card card-body replyRow' style='margin-left:15px; display:none;' id="im">
-        <form id="form"> 
-        <textarea  class='form-control' id="reply_content" placeholder='Leave a comment'></textarea><br>
-        <button type='button' class='btn btn-success' onclick='addReply(this)'>Post</button>
-        <button type='button' class='btn btn-danger' onclick='$(".replyRow").hide();'>Close</button>
-        </form>
-      </div>
       
 </div>
 <?php include './partials/footer.php';?>
@@ -84,8 +77,18 @@ include './partials/header.php';
 <script>
 $(document).ready(function(){
   displayRecords();
-  
+ 
 })
+
+  function reply(caller){
+  $(caller).parent().parent().parent().next().show();
+  
+ 
+}
+function closed(caller){
+  $(caller).parent().parent().hide();
+}
+
 
 function displayRecords(){
 var post_id=<?php echo $_GET['id'];?>;
@@ -161,11 +164,7 @@ function addReply(caller){
   });
 }
 
-function reply(caller){
-  $('.replyRow').insertAfter($(caller).parent().parent().parent());
-  $('.replyRow').show();
- 
-}
+
 function deleteComment(deleteid){
   var con=confirm("Are you sure?");
   if(con==true){
