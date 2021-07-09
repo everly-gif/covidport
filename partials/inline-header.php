@@ -1,7 +1,7 @@
 <div class="container in-h d-flex justify-content-center">
-<a href="#" class="inline-nav">Recovery Stories</a>
-<a href="#" class="inline-nav in-active">Help and Discussion</a>
-<a href="#"class="inline-nav">Verified Leads</a>
+<a href="#" class="inline-nav in-active">Discussion</a>
+<a href="#" class="inline-nav ">Recovery Stories</a>
+<a href="#"class="inline-nav">Help</a>
 
 <!-- <a href="" class="inline-nav" data-target="#mymodal" data-toggle="modal" type="button">Login</a> 
  <button class="btn btn-success btn-c" data-target="#mymodal" data-toggle="modal">Login</button> 
