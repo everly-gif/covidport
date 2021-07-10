@@ -37,6 +37,15 @@ $table="post";
 </div>
 
 <div class="container">
+
+<div class="container search-bar">
+    <form style="margin-top:30px; " method="POST" class="d-flex">
+        <input type="search" name="search" class="form-control" placeholder="Search discussion" aria-label="Search">
+        <button class="btn btn-outline-success search  " type="submit" name="submit" >Search</button>
+       
+    </form>
+</div>
+
 <?php 
 
 $result=$mysqli->query("SELECT * FROM $table WHERE `category`='recovery-stories'");
