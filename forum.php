@@ -35,17 +35,14 @@ $table="post";
 <a href="recovery-stories.php" class="inline-nav ">Recovery Stories</a>
 <a href="help.php"class="inline-nav">Help</a>
 </div>
-<div class="container jumbo">
+<!-- <div class="container jumbo">
 <h4 class=" m-1"> Can't find what you are looking for? <br></h4> <h4 class=" m-1">Start a discussion</h4><br>
-<!-- <input type="text" class="form-control m-2" placeholder="Title" aria-label="Discussion">
-<input type="text" class="form-control m-2" placeholder="Short Description" aria-label="Discussion">
-<textarea class="form-control m-2" placeholder="Start your discussion" ></textarea> -->
 <a class="btn btn-success " href="start-post.php" type="submit">Start a discussion</a>
-</div>
+</div> -->
 
 <div class="container search-bar">
     <form style="margin-top:30px; " method="POST" class="d-flex">
-        <input type="search" name="search" class="form-control" placeholder="Search discussion" aria-label="Search">
+        <input type="search" name="search" id="search" class="form-control" placeholder="Search discussion" aria-label="Search">
         <button class="btn btn-outline-success search"  type="submit" name="submit" >Search</button>
        
     </form>
@@ -107,11 +104,11 @@ else{
 <script>if ( window.history.replaceState ) {
    window.history.replaceState( null, null, window.location.href );
   }
+  
 </script>
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
