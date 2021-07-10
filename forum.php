@@ -46,7 +46,7 @@ $table="post";
 <div class="container search-bar">
     <form style="margin-top:30px; " method="POST" class="d-flex">
         <input type="search" name="search" class="form-control" placeholder="Search discussion" aria-label="Search">
-        <button class="btn btn-outline-success search  " type="submit" name="submit" >Search</button>
+        <button class="btn btn-outline-success search"  type="submit" name="submit" >Search</button>
        
     </form>
 </div>
@@ -58,7 +58,7 @@ $table="post";
 
 <div class="search-results">
 
-<?php if(isset($_POST['submit'])){
+<?php if(isset($_POST['submit']) && !empty($_POST['search'])){
 $str=mysqli_real_escape_string($mysqli,$_POST['search']);
 $result=$mysqli->query(" SELECT * FROM $table where (`title` like ('%$str%') OR `short-desc` like ('%$str%')) AND `category`='discussion'") ;
 if(mysqli_num_rows($result)==0){

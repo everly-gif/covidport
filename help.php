@@ -32,11 +32,18 @@ $table="post";
 
 <div class="container in-h d-flex justify-content-center">
 <a href="forum.php" class="inline-nav ">Discussion</a>
-<a href="recovery-stories.php" class="inline-nav in-active ">Recovery Stories</a>
-<a href="help.php"class="inline-nav">Help</a>
+<a href="recovery-stories.php" class="inline-nav  ">Recovery Stories</a>
+<a href="help.php"class="inline-nav in-active">Help</a>
 </div>
 
 <div class="container">
+<div class="container search-bar">
+    <form style="margin-top:30px; " method="POST" class="d-flex">
+        <input type="search" name="search" class="form-control" placeholder="Search discussion" aria-label="Search">
+        <button class="btn btn-outline-success search  " type="submit" name="submit" >Search</button>
+       
+    </form>
+</div>
 <?php 
 
 $result=$mysqli->query("SELECT * FROM $table WHERE `category`='help'");
