@@ -46,30 +46,55 @@ $table="post";
     </form>
 </div>
 
-<?php 
 
-$result=$mysqli->query("SELECT * FROM $table WHERE `category`='recovery-stories'");
-if(mysqli_num_rows($result)>0){
-   while($data=$result->fetch_assoc()){
-   echo "<div class='container'>
-   <div class='card'>
-  <div class='card-header d-flex justify-content-between'>
-   <div>". $data['author']." ". "shared". "</div> <div>". $data['date_published']."</div>
-  </div>
-  <div class='card-body'>
-    <h5 class='card-title'>". $data['title']."</h5>
-    <p class='card-text'>". $data['short-desc']. "</p>
-    <a href='post.php?id=".$data['post_id']."' class='btn  btn-outline-success'>Show Some Love!</a>
-  </div>
-</div>
-   </div>";
-   }
+<div class="container thread-list">
+
+<div class="search-results">
+
+<?php if(isset($_POST['submit']) && !empty($_POST['search'])){
+$str=mysqli_real_escape_string($mysqli,$_POST['search']);
+$result=$mysqli->query(" SELECT * FROM $table where (`title` like ('%$str%') OR `short-desc` like ('%$str%')) AND `category`='recovery-stories'") ;
+if(mysqli_num_rows($result)==0){
+  echo "<h5 class='container' style='padding:0px; margin:30px 0px;'>Looks Like there's not a lot of discussions, start your own! </h5>";
+  $result=$mysqli -> query("SELECT * FROM $table WHERE `category`='recovery-stories' ORDER BY `post_id` DESC ") or die($mysqli->error);
 }
 else{
-    echo "<div>There are no posts here! , Be First </div>";
+  echo "<h5 class='container' style='padding:0px; margin:30px 0px;'>Search Results </h5>";
 }
-
+}
+else{
+  echo "<h5 class='container'style='padding:0px; margin:30px 0px;'>Recently added </h5>";
+  $result=$mysqli -> query("SELECT * FROM $table WHERE `category`='recovery-stories' ORDER BY `post_id` DESC ") or die($mysqli->error);
+ }
+ if(mysqli_num_rows($result)>0){
+ while($data=$result->fetch_assoc()){
+         
+  $queries[]=$data;
+}
+ foreach($queries as $searchresults) : ?>
+<div class="card">
+  <div class="card-header d-flex justify-content-between">
+   <div><?php echo $searchresults['author']." ". "shared"; ?></div> <div><?php echo $searchresults['date_published'];?></div>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"><?php echo $searchresults['title'];?></h5>
+    <p class="card-text"><?php echo $searchresults['short-desc'];?> </p>
+    <a href="post.php?id=<?php echo $searchresults['post_id'];?>" class="btn  btn-outline-success">Show Some Love!</a>
+  </div>
+</div>
+<?php endforeach;}
+else{
+  echo "<h5 class='container' style='padding:0px; margin:30px 0px;'>Looks Like there's not a lot of discussions, start your own! </h5>";
+}
 ?>
+
+
+
+
+
+
+</div>
+</div>
 </div>
 
 </script>
