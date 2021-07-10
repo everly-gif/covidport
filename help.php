@@ -39,7 +39,7 @@ $table="post";
 <div class="container">
 <div class="container search-bar">
     <form style="margin-top:30px; " method="POST" class="d-flex">
-        <input type="search" name="search" class="form-control" placeholder="Search discussion" aria-label="Search">
+        <input type="search" name="search" class="form-control" placeholder="Search by Place" aria-label="Search">
         <button class="btn btn-outline-success search  " type="submit" name="submit"  >Search</button>
        
     </form>
@@ -93,7 +93,7 @@ else{
 </div>
 </div>
 </div>
-
+<?php include './partials/footer.php'?>
 </script>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

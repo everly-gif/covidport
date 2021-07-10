@@ -6,7 +6,7 @@
 }
 .navbar{
     background-color: white !important;
-    padding:20px;
+    padding:20px 70px;
     font-size: 16px ;
     
 }
@@ -30,17 +30,14 @@
   }
   
   
-  .dropdown {
-    position: relative;
-    
-  }
+ 
   
  
   .dropdown-content {
     
     position: absolute;
     background-color: #f1f1f1;
-    min-width: 100px;
+    min-width: 135px;
     z-index: 1;
     box-shadow: 9px 9px 20px #EEDCC9;
     display: none;

@@ -39,10 +39,10 @@ $table="post";
 <h4 class=" m-1"> Can't find what you are looking for? <br></h4> <h4 class=" m-1">Start a discussion</h4><br>
 <a class="btn btn-success " href="start-post.php" type="submit">Start a discussion</a>
 </div> -->
-
+<div class="container">
 <div class="container search-bar">
     <form style="margin-top:30px; " method="POST" class="d-flex">
-        <input type="search" name="search" id="search" class="form-control" placeholder="Search discussion" aria-label="Search">
+        <input type="search" name="search" id="search" class="form-control" placeholder="Search discussions" aria-label="Search">
         <button class="btn btn-outline-success search"  type="submit" name="submit" >Search</button>
        
     </form>
@@ -97,6 +97,7 @@ else{
 
 
 
+</div>
 </div>
 </div>
 
