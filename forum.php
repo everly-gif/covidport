@@ -30,20 +30,23 @@ $table="post";
 <?php include './partials/header.php';?>
 
 
-<?php include './partials/inline-header.php';?>
-
+<div class="container in-h d-flex justify-content-center">
+<a href="forum.php" class="inline-nav in-active">Discussion</a>
+<a href="recovery-stories.php" class="inline-nav ">Recovery Stories</a>
+<a href="help.php"class="inline-nav">Help</a>
+</div>
 <div class="container jumbo">
 <h4 class=" m-1"> Can't find what you are looking for? <br></h4> <h4 class=" m-1">Start a discussion</h4><br>
 <!-- <input type="text" class="form-control m-2" placeholder="Title" aria-label="Discussion">
 <input type="text" class="form-control m-2" placeholder="Short Description" aria-label="Discussion">
 <textarea class="form-control m-2" placeholder="Start your discussion" ></textarea> -->
-<a class="btn btn-success " href="start-discussion.php" type="submit">Start a discussion</a>
+<a class="btn btn-success " href="start-post.php" type="submit">Start a discussion</a>
 </div>
 
 <div class="container search-bar">
     <form style="margin-top:30px; " method="POST" class="d-flex">
         <input type="search" name="search" class="form-control" placeholder="Search discussion" aria-label="Search">
-        <button class="btn btn-outline-success search  " type="submit" name="submit" onsubmit="yourJsFunction();return false">Search</button>
+        <button class="btn btn-outline-success search  " type="submit" name="submit" >Search</button>
        
     </form>
 </div>
@@ -57,10 +60,10 @@ $table="post";
 
 <?php if(isset($_POST['submit'])){
 $str=mysqli_real_escape_string($mysqli,$_POST['search']);
-$result=$mysqli->query(" SELECT * FROM $table where `title` like ('%$str%') OR `short-desc` like ('%$str%')") ;
+$result=$mysqli->query(" SELECT * FROM $table where (`title` like ('%$str%') OR `short-desc` like ('%$str%')) AND `category`='discussion'") ;
 if(mysqli_num_rows($result)==0){
   echo "<h5 class='container' style='padding:0px; margin:30px 0px;'>Looks Like there's not a lot of discussions, start your own! </h5>";
-  $result=$mysqli -> query("SELECT * FROM $table ORDER BY `post_id` DESC  LIMIT 10") or die($mysqli->error);
+  $result=$mysqli -> query("SELECT * FROM $table WHERE `category`='discussion' ORDER BY `post_id` DESC ") or die($mysqli->error);
 }
 else{
   echo "<h5 class='container' style='padding:0px; margin:30px 0px;'>Search Results </h5>";
@@ -68,8 +71,9 @@ else{
 }
 else{
   echo "<h5 class='container'style='padding:0px; margin:30px 0px;'>Recently added </h5>";
-  $result=$mysqli -> query("SELECT * FROM $table ORDER BY `post_id` DESC  LIMIT 10") or die($mysqli->error);
+  $result=$mysqli -> query("SELECT * FROM $table WHERE `category`='discussion' ORDER BY `post_id` DESC ") or die($mysqli->error);
  }
+ if(mysqli_num_rows($result)>0){
  while($data=$result->fetch_assoc()){
          
   $queries[]=$data;
@@ -85,7 +89,11 @@ else{
     <a href="post.php?id=<?php echo $searchresults['post_id'];?>" class="btn  btn-outline-success">Join the discussion</a>
   </div>
 </div>
-<?php endforeach;?>
+<?php endforeach;}
+else{
+  echo "<h5 class='container' style='padding:0px; margin:30px 0px;'>Looks Like there's not a lot of discussions, start your own! </h5>";
+}
+?>
 
 
 

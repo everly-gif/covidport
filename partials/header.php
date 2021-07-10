@@ -11,7 +11,7 @@
 <li class="nav-item"> <a class="nav-link " aria-current="page" href="#">Home</a></li>
 <li class="nav-item"> <a class="nav-link" href="#">Visualizer</a></li>
 <li class="nav-item"> <a class="nav-link" href="forum.php">Forum</a></li>
-<li class="nav-item"> <a class="nav-link " href="#" >Donate</a></li>
+<li class="nav-item"> <a class="nav-link " href="donate.php" >Donate</a></li>
         <!-- <a class="nav-link " href="login.php" >Login</a> -->
         <?php  if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
             echo '
