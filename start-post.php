@@ -76,8 +76,8 @@ if($alert) {
     <form method="post"  style="margin-top:20px;">
     <input type="text" class="form-control" name="title" placeholder="Title of your post" required><br>
     <input type="text" class="form-control" name="short-desc" placeholder="A short description of your post" required><br>
-    <label for ="category">Choose a category</label>
     <select name="category" class="form-control" id="category" required>
+    <option disable selected value >Select a Category</option>
     <option value="recovery-stories">Recovery Stories</option>
     <option value="help">Help</option>
     <option value="help">Discussion</option>

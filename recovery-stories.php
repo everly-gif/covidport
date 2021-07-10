@@ -26,8 +26,10 @@ $table="post";
 
 </head>
 <body>
+
   
 <?php include './partials/header.php';?>
+
 
 
 <div class="container in-h d-flex justify-content-center">
@@ -40,7 +42,7 @@ $table="post";
 
 <div class="container search-bar">
     <form style="margin-top:30px; " method="POST" class="d-flex">
-        <input type="search" name="search" class="form-control" placeholder="Search discussion" aria-label="Search">
+        <input type="search" name="search" class="form-control" placeholder="Search Stories" aria-label="Search">
         <button class="btn btn-outline-success search  " type="submit" name="submit" >Search</button>
        
     </form>
@@ -55,7 +57,7 @@ $table="post";
 $str=mysqli_real_escape_string($mysqli,$_POST['search']);
 $result=$mysqli->query(" SELECT * FROM $table where (`title` like ('%$str%') OR `short-desc` like ('%$str%')) AND `category`='recovery-stories'") ;
 if(mysqli_num_rows($result)==0){
-  echo "<h5 class='container' style='padding:0px; margin:30px 0px;'>Looks Like there's not a lot of discussions, start your own! </h5>";
+  echo "<h5 class='container' style='padding:0px; margin:30px 0px;'>Looks Like there's not a lot of discussions , <a href='start-post.php'>start your own!</a></h5>";
   $result=$mysqli -> query("SELECT * FROM $table WHERE `category`='recovery-stories' ORDER BY `post_id` DESC ") or die($mysqli->error);
 }
 else{
@@ -84,7 +86,7 @@ else{
 </div>
 <?php endforeach;}
 else{
-  echo "<h5 class='container' style='padding:0px; margin:30px 0px;'>Looks Like there's not a lot of discussions, start your own! </h5>";
+  echo "<h5 class='container' style='padding:0px; margin:30px 0px;'>Looks Like there's not a lot of discussions,<a href='start-post.php'> start your own!</a> </h5>";
 }
 ?>
 
@@ -96,6 +98,7 @@ else{
 </div>
 </div>
 </div>
+<?php include './partials/footer.php'?>
 
 </script>
 
