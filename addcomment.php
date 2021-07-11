@@ -3,6 +3,7 @@ include './partials/db.php';
 session_start();
 
 $table="comments";
+
 if(isset($_POST['displayrecord']) && isset ($_POST['post_id'])){
     
     $post_id=$_POST['post_id'];
@@ -63,6 +64,8 @@ if(isset($_POST['displayrecord']) && isset ($_POST['post_id'])){
   if(isset($_POST['deletepost'])){
     $post_id=$_POST['deletepost'];
     $query="DELETE FROM `post` WHERE `post_id`=$post_id ";
+    $query2="DELETE FROM `comments` WHERE `post_id`=$post_id ";
     $res=$mysqli->query($query);
+    $res2=$mysqli->query($query2);
 }
 ?>
