@@ -3,6 +3,7 @@ include './partials/db.php';
 $table='users';
 $alert=false;
 $erroralert=false;
+
 if(isset($_POST['submit'])){
     $email=$_POST['email'];
     $password=$_POST['password'];
