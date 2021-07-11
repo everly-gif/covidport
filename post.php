@@ -53,7 +53,7 @@ include './partials/header.php';
         $data=mysqli_fetch_assoc($result);
         echo '
         <h1>'.$data['title'].'</h1><br>';
-        if(isset($_SESSION['loggedin']) || $_SESSION['loggedin']==true){
+        if(isset($_SESSION['loggedin'])){
           if(isset($_SESSION['user_id']) && $_SESSION['user_id']==$data['user_id']){
             echo '<span><button type="button" class="btn btn-danger " onclick="deletepost('.$id.');">Delete</button></span><br><br>';
           }
@@ -73,22 +73,18 @@ include './partials/header.php';
     
     <form method="POST" id="mainform">
         <textarea  class="form-control" id="comment_content" placeholder="Leave a comment"></textarea><br>
-        <button class="btn btn-success" type="button" onclick="addComment()" id="submit" name="submit">Post</button>
-        
+        <?php  if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
+          echo '<a class="btn btn-success" href="login.php" >Login to Comment</a  1`>';
+        }
+        else{
+          echo '<button class="btn btn-success" type="button" onclick="addComment()" id="submit" name="submit">Post</button>';
+        }
+        ?>
     </form>
     
     
     <div id="display-comment"></div>
-</div>
-
-      <div class='card card-body replyRow' style='margin-left:15px; display:none;' id="im">
-        <form id="form"> 
-        <textarea  class='form-control' id="reply_content" placeholder='Leave a comment'></textarea><br>
-        <button type='button' class='btn btn-success' onclick='addReply(this)'>Post</button>
-        <button type='button' class='btn btn-danger' onclick='$(".replyRow").hide();'>Close</button>
-        </form>
-      </div>
-      
+</div>   
 </div>
 <?php include './partials/footer.php';?>
 
@@ -156,38 +152,7 @@ function addComment(){
   });
 }
  
-// function addReply(caller){
-//   var cont=$('#reply_content').val();
-//   var reply_auth= '<?php echo $_SESSION['username'];?>';
-//   var user_id=<?php echo $_SESSION['user_id'];?>;
-//   var postid=<?php echo $_GET['id'];?>;
-//   var parent_id=$(caller).parent().parent().next().attr("id");
-  
-//   $.ajax({
-     
-//      url:"",
-//      type:'post',
-//      data:{cont:cont,
-//      reply_auth:reply_auth,
-//      user_id:user_id,
-//      postid:postid,
-//      parent_id:parent_id
-     
-     
-//      },
-//      success:function(data,status){
-        
-//         document.getElementById("form").reset();
-//         displayRecords();
-//         location.reload();
-//         if(data == 'success')
-//          return false;
-        
-//      },
-     
 
-//   });
-// }
 
 function deleteComment(deleteid){
   var con=confirm("Are you sure?");

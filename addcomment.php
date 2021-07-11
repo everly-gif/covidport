@@ -1,6 +1,7 @@
 <?php
 include './partials/db.php';
 session_start();
+
 $table="comments";
 if(isset($_POST['displayrecord']) && isset ($_POST['post_id'])){
     
@@ -43,6 +44,7 @@ if(isset($_POST['displayrecord']) && isset ($_POST['post_id'])){
   
   
   if (isset($_POST['content']) && isset($_POST['author']) && isset($_POST['author_id']) && isset ($_POST['post_id'])){
+    
     $content=addslashes($_POST['content']);
     $author=$_POST['author'];
     $author_id=$_POST['author_id'];

@@ -5,6 +5,9 @@ include './partials/db.php';
 $table="post";
 $alert=false;
 $erroralert=false;
+if(!$_SESSION['loggedin'] && $_SESSION['loggedin']!=true){
+    header('location:forum.php');
+}
 if(isset($_POST['submit'])){
     $title=addslashes($_POST['title']);
     $desc=addslashes($_POST['short-desc']);
