@@ -46,7 +46,7 @@ if(isset($_POST['deleteacc'])){
 <h3>Posts</h3>
 <?php 
 $id=$_SESSION['user_id'];
-$query="SELECT * FROM `post` WHERE `user_id` = $id";
+$query="SELECT * FROM `post` WHERE `user_id` = '$id' ORDER BY `date_published` DESC";
 $result=$mysqli->query($query);
 if(mysqli_num_rows($result)>0){
 while($data=$result->fetch_assoc()){
@@ -62,7 +62,7 @@ else{
 <h3>Comments</h3>
 <?php 
 $id=$_SESSION['user_id'];
-$query="SELECT * FROM `comments` WHERE `author_id` = $id";
+$query="SELECT * FROM `comments` WHERE `author_id` = '$id' ORDER BY `date` DESC";
 $result=$mysqli->query($query);
 if(mysqli_num_rows($result)>0){
 while($data=$result->fetch_assoc()){
