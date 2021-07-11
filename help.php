@@ -52,7 +52,7 @@ $table="post";
 $str=mysqli_real_escape_string($mysqli,$_POST['search']);
 $result=$mysqli->query(" SELECT * FROM $table where (`title` like ('%$str%') OR `short-desc` like ('%$str%')) AND `category`='help'") ;
 if(mysqli_num_rows($result)==0){
-  echo "<h5 class='container' style='padding:0px; margin:30px 0px;'>Looks Like there's not a lot of discussions, start your own! </h5>";
+  echo "<h5 class='container' style='padding:0px; margin:30px 0px;'>Looks Like there's not a lot of discussions , <a href='start-post.php'>start your own!</a></h5>";
   $result=$mysqli -> query("SELECT * FROM $table WHERE `category`='help' ORDER BY `post_id` DESC ") or die($mysqli->error);
 }
 else{
@@ -81,7 +81,7 @@ else{
 </div>
 <?php endforeach;}
 else{
-  echo "<h5 class='container' style='padding:0px; margin:30px 0px;'>Looks Like there's not a lot of discussions, start your own! </h5>";
+  echo "<h5 class='container' style='padding:0px; margin:30px 0px;'>Looks Like there's not a lot of discussions , <a href='start-post.php'>start your own!</a></h5>";
 }
 ?>
 

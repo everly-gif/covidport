@@ -58,5 +58,9 @@ if(isset($_POST['displayrecord']) && isset ($_POST['post_id'])){
       $query="DELETE FROM $table WHERE `comment_id`=$comment_id OR `parent_id`= $comment_id";
       $res=$mysqli->query($query);
   }
-  
+  if(isset($_POST['deletepost'])){
+    $post_id=$_POST['deletepost'];
+    $query="DELETE FROM `post` WHERE `post_id`=$post_id ";
+    $res=$mysqli->query($query);
+}
 ?>

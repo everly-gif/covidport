@@ -17,7 +17,7 @@
         <?php  if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
             echo '
                 <a class="nav-link " href="login.php">Login</a>';}
-            else{echo '<li class="nav-item"> <div class="dropdown" ><button class="dropbtn">&#128101;'.$_SESSION['username'].'▼</button>
+            else{echo '<li class="nav-item"> <div class="dropdown" ><button class="dropbtn notranslate">&#128101;'.$_SESSION['username'].'▼</button>
               <div class="dropdown-content"><a class="nav-link" href="user-details.php?id='.$_SESSION['user_id'].'">Profile</a><a class="nav-link" href="start-post.php">Write a Post</a><a class="nav-link" href="logout.php">Logout</a></div>
               </div></li>';
                 
@@ -34,4 +34,7 @@
   function googleTranslateElementInit() {
   new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
 }
+if ( window.history.replaceState ) {
+   window.history.replaceState( null, null, window.location.href );
+  }
 </script>
