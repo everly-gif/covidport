@@ -1,6 +1,11 @@
 <?php
 session_start();
 include './partials/db.php';
+if(!isset($_SESSION['username']) && ($_SESSION['user_id'] != true))
+{
+     header("Location:forum.php"); //Do not allow  access.
+     exit;}
+
 if(isset($_POST['deleteacc'])){
     $user_id=$_POST['deleteacc'];
     $query="DELETE FROM `post` WHERE `user_id`=$user_id ";

@@ -1,7 +1,6 @@
 <?php
 session_start();
 include './partials/db.php';
-
 // if (isset($_POST['cont']) && isset($_POST['reply_auth']) && isset($_POST['user_id']) && isset ($_POST['postid']) && isset($_POST['parent_id'])){
 //   $content=addslashes($_POST['cont']);
 //   $author=$_POST['reply_auth'];
