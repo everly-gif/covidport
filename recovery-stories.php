@@ -86,7 +86,7 @@ else{
 </div>
 <?php endforeach;}
 else{
-  echo "<h5 class='container' style='padding:0px; margin:30px 0px;'>Looks Like there's not a lot of discussions,<a href='start-post.php'> start your own!</a> </h5>";
+  echo "<h5 class='container' style='padding:0px; margin:30px 0px;'>Looks Like there's not a lot of discussions , <a href='start-post.php'> start your own!</a> </h5>";
 }
 ?>
 

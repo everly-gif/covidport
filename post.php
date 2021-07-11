@@ -47,12 +47,19 @@ include './partials/header.php';
   $table="post";
   if(isset($_GET['id']) && $_GET['id']>0){
     $id=mysqli_real_escape_string($mysqli,$_GET['id']);
-    $sql= "SELECT `title`,`short-desc`,`category`,`content`, `author`, `date_published` FROM $table WHERE `post_id` = $id";
+    $sql= "SELECT `title`,`short-desc`,`category`,`content`,`user_id`, `author`, `date_published` FROM $table WHERE `post_id` = $id";
     $result=$mysqli->query($sql);
     if(mysqli_num_rows($result)){
         $data=mysqli_fetch_assoc($result);
         echo '
-        <h1>'.$data['title'].'</h1><br>
+        <h1>'.$data['title'].'</h1><br>';
+        if(isset($_SESSION['loggedin']) || $_SESSION['loggedin']==true){
+          if(isset($_SESSION['user_id']) && $_SESSION['user_id']==$data['user_id']){
+            echo '<span><button type="button" class="btn btn-danger " onclick="deletepost('.$id.');">Delete</button></span><br><br>';
+          }
+        }
+        echo '
+        
         <p>'."Posted by ".$data['author']." at ".$data['date_published']." in ".'<span style="color:red;">'.$data['category'].'</span></p>
         <h6><em><strong>'.$data['short-desc'].'</em></strong></h6><br>
         <div>'.$data['content'].'</div><br>
@@ -197,6 +204,22 @@ function deleteComment(deleteid){
     });
   }
 }
+function deletepost(deleteid){
+  var con=confirm("Are you sure?");
+  if(con==true){
+    $.ajax({
+      url:"addcomment.php",
+      type:"post",
+      data:{deletepost:deleteid},
+      success:function(data,status){
+        location.href = "forum.php";
+         if(data == 'success')
+         return false;
+      }
+    });
+  }
+}
+
 
 
 function reply(caller){
