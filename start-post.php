@@ -81,8 +81,8 @@ if($alert) {
     <select name="category" class="form-control" id="category" onchange="checkfor()" required>
     <option disable selected value >Select a Category</option>
     <option value="recovery-stories">Recovery Stories</option>
+    <option value="Discussion">Discussion</option>
     <option id="help" value="help">Help</option>
-    <option value="help">Discussion</option>
     </select><br>
     <input type="text" id="short-desc" class="form-control" name="short-desc" placeholder="A short description of your post" required><br>
     <textarea id="editor" name="editor" required></textarea><br>
