@@ -77,3 +77,6 @@ footer{
 footer p{
         margin-top:20px;
     }
+.main{
+  min-height:350px;
+}
