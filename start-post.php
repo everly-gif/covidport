@@ -75,13 +75,13 @@ if($alert) {
 <div class="container">
     <form method="post"  style="margin-top:20px;">
     <input type="text" class="form-control" name="title" placeholder="Title of your post" required><br>
-    <input type="text" class="form-control" name="short-desc" placeholder="A short description of your post" required><br>
-    <select name="category" class="form-control" id="category" required>
+    <select name="category" class="form-control" id="category" onchange="checkfor()" required>
     <option disable selected value >Select a Category</option>
     <option value="recovery-stories">Recovery Stories</option>
-    <option value="help">Help</option>
+    <option id="help" value="help">Help</option>
     <option value="help">Discussion</option>
     </select><br>
+    <input type="text" id="short-desc" class="form-control" name="short-desc" placeholder="A short description of your post" required><br>
     <textarea id="editor" name="editor" required></textarea><br>
     <input type="submit" class="btn btn-success" name="submit" type="submit">
     </form>
@@ -89,6 +89,16 @@ if($alert) {
 <?php include './partials/footer.php';?>
 <script>
 CKEDITOR.replace('editor');
+function checkfor() {
+        if (document.getElementById("help").selected) {
+            
+            document.getElementById("short-desc").setAttribute("placeholder", "Enter Place/City");
+        } else {
+            
+            document.getElementById("short-desc").setAttribute("placeholder", "A short description of your post");
+            
+        }
+    }
 </script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
