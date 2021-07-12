@@ -28,7 +28,30 @@ $table="post";
 <body>
   
 <?php include './partials/header.php';?>
+<div class="d-flex justify-content-between">
+<div class="cont-1">
+<div class="container main">
+<p style="text-align:center;margin-bottom:20px;color:#2C2E43;">Latest In Disucssions</p>
+<?php
 
+$query="SELECT * FROM `post` WHERE `category`='discussion'";
+$result=$mysqli->query($query);
+while($data=$result->fetch_assoc()){
+  echo '<div class="container"><p style="margin-bottom:0;color:orangered;font-size:15px;">'.$data['author'].' shared </p>';
+  echo '<p style="margin-bottom:2px;" ><a class="link" href="post.php?id='.$data['post_id'].'">'.$data['title'].' </a></p></div><br>';
+}
+
+?>
+</div>
+</div>
+<div class="cont-2">
+<div class="container search-bar">
+    <form style="margin-top:30px; " method="POST" class="d-flex">
+        <input type="search" name="search" class="form-control" placeholder="Search by Place" aria-label="Search">
+        <button class="btn btn-success search  " type="submit" name="submit"  >Search</button>
+       
+    </form>
+</div>
 
 <div class="container in-h d-flex justify-content-center">
 <a href="forum.php" class="inline-nav ">Discussion</a>
@@ -36,14 +59,10 @@ $table="post";
 <a href="help.php"class="inline-nav in-active">Help</a>
 </div>
 
+
+
 <div class="container">
-<div class="container search-bar">
-    <form style="margin-top:30px; " method="POST" class="d-flex">
-        <input type="search" name="search" class="form-control" placeholder="Search by Place" aria-label="Search">
-        <button class="btn btn-outline-success search  " type="submit" name="submit"  >Search</button>
-       
-    </form>
-</div>
+
 <div class="container thread-list">
 
 <div class="search-results">
@@ -76,7 +95,9 @@ else{
   <div class="card-body">
     <h5 class="card-title"><?php echo $searchresults['title'];?></h5>
     <p class="card-text"><?php echo $searchresults['short-desc'];?> </p>
-    <a href="post.php?id=<?php echo $searchresults['post_id'];?>" class="btn  btn-outline-success">Help Out</a>
+    <div class="left">
+    <a href="post.php?id=<?php echo $searchresults['post_id'];?>" class="btn  btn-success click">Help Out</a>
+   </div>
   </div>
 </div>
 <?php endforeach;}
@@ -90,6 +111,23 @@ else{
 
 
 
+</div>
+</div>
+</div>
+</div>
+<div class="cont-3">
+<div class="container main">
+<p style="text-align:center;margin-bottom:20px;color:#2C2E43;">Latest In Recovery Stories</p>
+<?php
+
+$query="SELECT * FROM `post` WHERE `category`='recovery-stories'";
+$result=$mysqli->query($query);
+while($data=$result->fetch_assoc()){
+  echo '<div class="container"><p style="margin-bottom:0;color:orangered;font-size:15px;">'.$data['author'].' shared </p>';
+  echo '<p style="margin-bottom:2px;" ><a class="link" href="post.php?id='.$data['post_id'].'">'.$data['title'].' </a></p></div><br>';
+}
+
+?>
 </div>
 </div>
 </div>
