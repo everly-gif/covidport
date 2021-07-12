@@ -23,7 +23,7 @@ include './partials/db.php';?>
 <?php include './partials/header.php';?>
 <div class="container">
     <h4 style="text-align:center;">Donate or Volunteer to Organizations that are providing COVID-19 Relief</h4><br>
-    <h6  style="text-align:center;"><a href="submit-org.php" style="text-align:center;color:green;">Help us by submitting an org</a></h6>
+    <h6  style="text-align:center;"><a href="submit-org.php" style="text-align:center;color:green;">Submit an Org</a></h6>
     <div class="container search-bar">
     <form style="margin-top:30px; " method="POST" class="d-flex">
         <input type="search" name="search" id="search" class="form-control" placeholder="Search discussions" aria-label="Search">
