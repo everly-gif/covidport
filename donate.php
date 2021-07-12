@@ -26,7 +26,7 @@ include './partials/db.php';?>
     <h6  style="text-align:center;"><a href="submit-org.php" style="text-align:center;color:green;">Submit an Org</a></h6>
     <div class="container search-bar">
     <form style="margin-top:30px; " method="POST" class="d-flex">
-        <input type="search" name="search" id="search" class="form-control" placeholder="Search discussions" aria-label="Search">
+        <input type="search" name="search" id="search" class="form-control" placeholder="Search by place , org or field of relief" aria-label="Search">
         <button class="btn btn-outline-success search"  type="submit" name="submit" >Search</button>
        
     </form>
