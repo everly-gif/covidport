@@ -10,20 +10,20 @@ if(isset($_POST['displayrecord']) && isset ($_POST['post_id'])){
     $display=$mysqli->query("SELECT * FROM $table WHERE `post_id` =  '$post_id' AND `parent_id` ='0' ORDER BY `comment_id` DESC ");
    
     if(mysqli_num_rows($display)>0){
-        echo "<h3 style='margin-top:40px;'>Comments</h3>";
+        echo "<h3 style='margin-top:40px;margin-bottom:30px;'>Comments</h3>";
     while($data=$display->fetch_assoc())
     {   
-        echo "<div class='card  reply'  >
-        <div class='card-header d-flex justify-content-between'>
-         <div>". $data['comment_author']." "."says </div> <div>".  $data['date']."</div>
-        </div>
-        <div class='card-body'>
-          <p class='card-text'>". $data['comment']." </p>
-          <div style='text-align:right;' >";
+        echo "<div class=' reply'  >
+        <div class=' d-flex '>
+         <div style='margin-right:10px;'>". $data['comment_author']." "."says </div> <div>".  $data['date']."</div>
+        </div><br>
+        <div >
+          <p >". $data['comment']." </p>
+          <div style='text-align:left;' >";
          
           if(isset($_SESSION['loggedin']) || $_SESSION['loggedin']==true){
               if(isset($_SESSION['user_id']) && $_SESSION['user_id']==$data['author_id']){
-                  echo "<button class='btn btn-danger' onclick='deleteComment(".$data['comment_id'].");' style='margin-left:5px;' >Delete</button>";
+                  echo "<button class='btn btn-danger' onclick='deleteComment(".$data['comment_id'].");' style='background:none; color:red;margin-bottom:10px;' >Delete</button>";
               }
           }
           echo "</div>
