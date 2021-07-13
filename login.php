@@ -7,10 +7,13 @@ $erroralert=false;
 if(isset($_POST['submit'])){
     $email=$mysqli -> real_escape_string($_POST['email']);
     $password=$mysqli -> real_escape_string($_POST['password']);
-    $result=$mysqli->query("SELECT * FROM $table WHERE `email`='$email' AND `password`='$password'");
+    $result=$mysqli->query("SELECT * FROM $table WHERE `email`='$email'");
     $details=$mysqli->query("SELECT `name`,mobile_no FROM $table WHERE email='$email'");
     $id=$mysqli->query("SELECT id FROM $table WHERE email='$email'");
     if(mysqli_num_rows($result) == 1){
+      $d=mysqli_fetch_assoc($result);
+      $verify=password_verify($password,$d['password']);
+      if($verify){
       $data=mysqli_fetch_assoc($details);
       $ID=mysqli_fetch_assoc($id);
       session_start();
@@ -20,10 +23,14 @@ if(isset($_POST['submit'])){
       $_SESSION['username']=$data['name'];
       $_SESSION['user_id'] = $ID['id'];
       $alert=true;
+      }
+      else{
+        $erroralert="Wrong Credentials, try again!";
+      }
 
     }
     else{
-        $erroralert="Wrong Credentials, try again!";
+        $erroralert="Account doesn't exist, sign up!";
     }
 }
 ?>
