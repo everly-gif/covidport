@@ -1,23 +1,27 @@
 *{
-    font-family: 'Poppins', sans-serif;
-    box-sizing: border-box;
-    margin:0;
-    padding:0;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
 }
 .navbar{
-    background-color: white !important;
-    padding:20px;
-    font-size: 16px ;
-    
+  background-color:  #2C2E43  !important;
+  padding:10px 70px;
+  font-size: 16px ;
+  
 }
 .nav-link{
-    color:black !important;
-    margin:15px;
+  color:#FFF !important;
+  margin:15px;
 }
 .active{
-    color: purple !important;
-    font-weight: bold;
+  color: #2C2E43 !important;
+  font-weight: bold;
 }
+.navbar-brand{
+  color: #fff !important
+}
+
 .search{
     
     width:19%;
@@ -25,7 +29,7 @@
 }
 footer{
     text-align: center;
-    background-color: #198754;
+    background-color: #2C2E43;
     color:white;
     padding:10px;
     margin-top:70px;
@@ -39,6 +43,30 @@ footer p{
     padding: 20px;
     border-radius: 20px;
     margin-top: 20px;
+    width:50%;
+    background-color: #FFF;
+    
+}
+.btn-success{
+  background-color:#2C2E43;
+  border-color:#2C2E43!important;
+  outline:none;
+  width:100%;
+}
+.btn-success:hover, .btn-success:focus,.btn-success.focus,.btn-success:active,.btn-success.disabled,
+.btn-success:disabled,.btn-success:not(:disabled):not(.disabled):active,
+.btn-success:not(:disabled):not(.disabled).active{
+  background-color:#2C2E43 !important;
+  border-color:#2C2E43 !important;
+  outline:none !important;
+}
+
+.form input{
+  width:100%;
+  
+}
+body{
+  background-color: #f1f1f1;
 }
 .dropbtn {
     background-color: #F0C929;

@@ -7,16 +7,22 @@ $alert=false;
 $erroralert=false;
 
 if(isset($_POST['submit'])){
-    $org=addslashes($_POST['org']);
-    $field=addslashes($_POST['field']);
-    $website=$_POST['website'];
-    $place=$_POST['place'];
+    $org=$mysqli -> real_escape_string(addslashes($_POST['org']));
+    $field=$mysqli -> real_escape_string(addslashes($_POST['field']));
+    $website=$mysqli -> real_escape_string($_POST['website']);
+    $place=$mysqli -> real_escape_string($_POST['place']);
+    $query2=$mysqli->query("SELECT * FROM `$table` WHERE `website`='$website'");
+    if(mysqli_num_rows($query2)==0){
     $query=$mysqli->query("INSERT INTO `$table` VALUES ('','$org','$field','$website','$place','not approved')");
     if($query){
         $alert=true;
     }
     else{
         $erroralert="Something Went Wrong :(";
+    }
+  }
+    else{
+    $erroralert="Org already Submitted ";
     }
 }
 

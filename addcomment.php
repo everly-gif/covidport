@@ -6,7 +6,7 @@ $table="comments";
 
 if(isset($_POST['displayrecord']) && isset ($_POST['post_id'])){
     
-    $post_id=$_POST['post_id'];
+    $post_id= $mysqli -> real_escape_string($_POST['post_id']);
     $display=$mysqli->query("SELECT * FROM $table WHERE `post_id` =  '$post_id' AND `parent_id` ='0' ORDER BY `comment_id` DESC ");
    
     if(mysqli_num_rows($display)>0){
@@ -18,7 +18,7 @@ if(isset($_POST['displayrecord']) && isset ($_POST['post_id'])){
          <div style='margin-right:10px;'>". $data['comment_author']." "."says </div> <div>".  $data['date']."</div>
         </div><br>
         <div >
-          <p >". $data['comment']." </p>
+          <p >". stripslashes($data['comment'])." </p>
           <div style='text-align:left;' >";
          
           if(isset($_SESSION['loggedin']) || $_SESSION['loggedin']==true){
@@ -46,7 +46,7 @@ if(isset($_POST['displayrecord']) && isset ($_POST['post_id'])){
   
   if (isset($_POST['content']) && isset($_POST['author']) && isset($_POST['author_id']) && isset ($_POST['post_id'])){
     
-    $content=addslashes($_POST['content']);
+    $content=$mysqli -> real_escape_string(addslashes($_POST['content']));
     $author=$_POST['author'];
     $author_id=$_POST['author_id'];
     $date=date('Y-m-d h:i:s');

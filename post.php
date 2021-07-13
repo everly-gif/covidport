@@ -54,7 +54,7 @@ include './partials/header.php';
     if(mysqli_num_rows($result)){
         $data=mysqli_fetch_assoc($result);
         echo '<div class="d-flex "><div>
-        <h3 style="margin-bottom:30px;">'.$data['title'].'</h3></div><br>';
+        <h3 style="margin-bottom:30px;">'.stripslashes($data['title']).'</h3></div><br>';
         if(isset($_SESSION['loggedin'])){
           if(isset($_SESSION['user_id']) && $_SESSION['user_id']==$data['user_id']){
             echo '<div><span><button type="button" class="btn btn-danger del " onclick="deletepost('.$id.');">Delete</button></span></div>';
@@ -65,7 +65,7 @@ include './partials/header.php';
         echo '</div>
         
         <p>'."Posted by ".$data['author']." at ".$data['date_published']." in ".'<span style="color:red;">'.$data['category'].'</span></p>
-        <h6><em><strong>'.$data['short-desc'].'</em></strong></h6><br><br>
+        <h6><em><strong>'.stripslashes($data['short-desc']).'</em></strong></h6><br><br>
         <div><div class="post-cont">'.$data['content'].'</div></div><br>
         ';
     }

@@ -9,11 +9,11 @@ if(!$_SESSION['loggedin'] && $_SESSION['loggedin']!=true){
     header('location:forum.php');
 }
 if(isset($_POST['submit'])){
-    $title=addslashes($_POST['title']);
-    $desc=addslashes($_POST['short-desc']);
-    $content=$_POST['editor'];
+    $title=addslashes($mysqli -> real_escape_string($_POST['title']));
+    $desc=$mysqli -> real_escape_string(addslashes($_POST['short-desc']));
+    $content=$mysqli -> real_escape_string($_POST['editor']);
     $date=date('Y-m-d h:i:s');
-    $category=$_POST['category'];
+    $category=$mysqli -> real_escape_string($_POST['category']);
     $userid=$_SESSION['user_id'];
     $author=$_SESSION['username'];
     $query=$mysqli->query("INSERT INTO `$table` VALUES ('','$title','$desc','$category','$content','$userid','$author','$date')");
@@ -58,7 +58,7 @@ if($alert) {
             <span aria-hidden="true">×</span> 
         </button> 
     </div> ';
-    
+    echo '<meta http-equiv="refresh" content="2;url=user-details?id='.$_SESSION['user_id'].'.php" />';
      
    }
    if($erroralert) {
