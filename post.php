@@ -79,7 +79,7 @@ include './partials/header.php';
     <form method="POST" id="mainform">
         <textarea  class="form-control" id="comment_content" placeholder="Leave a comment"></textarea><br>
         <?php  if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
-          echo '<a class="btn btn-success" href="login.php" >Login to Comment</a  1`>';
+          echo '<a class="btn btn-success" href="login.php" >Login to Comment</a>';
         }
         else{
           echo '<button class="btn btn-success" type="button" onclick="addComment()" id="submit" name="submit">Post</button>';

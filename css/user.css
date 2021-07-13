@@ -1,82 +1,210 @@
 *{
-    font-family: 'Poppins', sans-serif;
-    box-sizing: border-box;
-    margin:0;
-    padding:0;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
 }
 .navbar{
-    background-color: white !important;
-    padding:20px 70px;
-    font-size: 16px ;
-    
+  background-color:  #2C2E43  !important;
+  padding:10px 70px;
+  font-size: 16px ;
+  margin-bottom:20px ;
 }
 .nav-link{
-    color:black !important;
-    margin:15px;
+  color:#FFF !important;
+  margin:15px;
 }
 .active{
-    color: purple !important;
-    font-weight: bold;
+  color: #2C2E43 !important;
+  font-weight: bold;
 }
-.dropbtn {
-    background-color: #F0C929;
-    color: #000;
-    padding: 12px;
-    font-size: 16px;
-    border-radius: 10px;
-    vertical-align: middle;
-    margin-top:8px;
-    border: none;
-  }
+.drop .nav-link{
+  color:#2C2E43 !important;
+}
+.search{
   
+  width:19%;
+  margin-left:1%;
+}
+.navbar-brand{
+  color: #fff !important
+}
+.search-bar{
+  margin-top:30px;
+}
+input[type="search"]{
+  width:80% !important;
+  border:#2C2E43 1px solid;
+}
+.btn-success{
+  background-color:#2C2E43;
+  border-color:#2C2E43!important;
+  outline:none;
+}
+.btn-success:hover, .btn-success:focus,.btn-success.focus,.btn-success:active,.btn-success.disabled,
+.btn-success:disabled,.btn-success:not(:disabled):not(.disabled):active,
+.btn-success:not(:disabled):not(.disabled).active{
+  background-color:#2C2E43 !important;
+  border-color:#2C2E43 !important;
+  outline:none !important;
+}
+
+
+
+.inline-nav{
+  margin: 20px;
+  color:#2C2E43;
+  text-decoration: none;
+}
+.in-active{
+  color:orangered;
+}
+.thread-list h3{
+  margin-top:50px;
   
-  
+}
+.card{
+  box-shadow: 5px 5px 15px #EEDCC9;
+  border-radius: 25px;
+  border:1px solid #2C2E43;
+}
+.left{
+  text-align: right;
+}
+.card{
+  margin:20px 0px;
+}
+footer{
+  text-align: center;
+  background-color: #2C2E43;
+  color:white;
+  padding:10px;
+  margin-top:70px;
  
-  .dropdown-content {
-    
-    position: absolute;
+  
+}
+.click{
+  border-radius: 20px;
+}
+.cont-1 .main, .cont-3 .main{
+  margin-top: 40px;
+}
+
+.cont-2{
+  width:70%;
+}
+
+footer p{
+  margin-top:20px;
+}
+.jumbo{
+  
+  padding:30px;
+  border-radius: 20px;
+  margin-top: 30px;
+  box-shadow: 5px 5px 15px #EEDCC9;
+ 
+ 
+}
+.login{
+  width:140px;
+}
+.inline-nav:nth-child(4){
+  color:#198754;
+}
+.in-h{
+  margin-top:10px;
+}
+.btn-c{
+  color:#198754;
+  background-color: transparent;
+  border:none;
+}
+.btn-c:hover{
+  color:#198754;
+  background-color: transparent;
+  border:none;
+  outline: none;
+}
+
+.dropbtn {
+  background-color: #2C2E43;
+  color: #fff;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 10px;
+  vertical-align: middle;
+  margin-top:11px;
+  border: none;
+}
+
+
+
+
+
+.dropdown-content {
+  
+  position: absolute;
+  background-color: #fff;
+  min-width: 135px;
+  z-index: 1;
+  box-shadow: 1px 1px 2px #ddd;
+  display: none;
+}
+
+
+.dropdown-content a {
+  text-decoration: none;
+  display: block;
+  color: black;
+  padding: 12px 16px;
+  
+  
+}
+.dropdown-content .nav-link{
+    margin:0;
+}
+.dropdown:hover .dropbtn {
+  background-color: #2C2E43;
+}
+
+.dropdown-content a:hover {
     background-color: #f1f1f1;
-    min-width: 135px;
-    z-index: 1;
-    box-shadow: 9px 9px 20px #EEDCC9;
-    display: none;
-  }
-  
-  
-  .dropdown-content a {
-    text-decoration: none;
-    display: block;
-    color: black;
-    padding: 12px 16px;
-    
-    
-  }
-  .dropdown-content .nav-link{
-      margin:0;
-  }
-  .dropdown:hover .dropbtn {
-    background-color: #F0C929;
   }
 
-  .dropdown-content a:hover {
-      background-color: #ddd;
-    }
-  
-  
-  .dropdown:hover .dropdown-content {
-      display: block;
-    }
-footer{
-        text-align: center;
-        background-color: #198754;
-        color:white;
-        padding:10px;
-        margin-top:70px;
-        
-    }
-footer p{
-        margin-top:20px;
-    }
+
+.dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+.card-header{
+    background:none;
+    border:none;
+}
+.link{
+    color:#3c48cc;
+    font-size: 14px;
+}
+#startpost{
+   margin-top:60px;
+}
 .main{
-  min-height:350px;
+  width:70%;
+  padding:30px;
+}
+.main1{
+  width:20%;
+  padding:30px;
+  border-right: 3px solid #f1f1f1;
+  padding-top: 40px;
+}
+.main p a{
+  color: #3c48cc !important;
+}
+.posts, .comments{
+  margin-bottom: 10px;
+  border-radius:20px;
+  border:3px solid #f1f1f1;
+  padding: 20px;
+  min-height:200px;
 }
