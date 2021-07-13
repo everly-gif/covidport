@@ -62,13 +62,8 @@ while($data=$result->fetch_assoc()){
 <a href="recovery-stories.php" class="inline-nav ">Recovery Stories</a>
 <a href="help.php"class="inline-nav">Help</a>
 </div>
-<!-- <div class="container jumbo">
-<h4 class=" m-1"> Can't find what you are looking for? <br></h4> <h4 class=" m-1">Start a discussion</h4><br>
-<a class="btn btn-success " href="start-post.php" type="submit">Start a discussion</a>
-</div> -->
+
 <div class="container">
-
-
 
 <div class="container thread-list">
 
@@ -111,12 +106,6 @@ else{
   echo "<p class='container' style='padding:0px; margin:30px 0px;'>Looks Like there's not a lot of discussions , <a href='start-post.php'>start your own!</a></p>";
 }
 ?>
-
-
-
-
-
-
 </div>
 </div>
 </div>

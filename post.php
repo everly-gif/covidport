@@ -4,17 +4,7 @@ include './partials/db.php';
 if(!$_GET['id']){
   header('Location:forum.php');
 }
-// if (isset($_POST['cont']) && isset($_POST['reply_auth']) && isset($_POST['user_id']) && isset ($_POST['postid']) && isset($_POST['parent_id'])){
-//   $content=addslashes($_POST['cont']);
-//   $author=$_POST['reply_auth'];
-//   $author_id=$_POST['user_id'];
-//   $date=date('Y-m-d h:i:s');
-//   $post_id=$_POST['postid'];
-//   $parent_id=$_POST['parent_id'];
-//   $query="INSERT INTO `comments` VALUES('','$content','$author','$author_id','$parent_id','$date','$post_id')";
-//   $result=$mysqli->query($query);
-  
-// }
+
 ?>
 
 

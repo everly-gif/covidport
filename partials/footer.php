@@ -1,8 +1,5 @@
 
-
-
 <footer >
-
 
 <div  style="margin-top:20px;"> Wrong Info? Make a <a style="color:white; text-decoration:underline;" target="_blank"href="https://github.com/everly-gif/hackcovid"> issue </a>
 </div>
