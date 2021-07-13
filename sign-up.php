@@ -7,10 +7,11 @@ if(isset($_POST['submit'])){
     $name=mysqli_real_escape_string($mysqli,$_POST['name']);
     $email=mysqli_real_escape_string($mysqli,$_POST['email']);
     $password=mysqli_real_escape_string($mysqli,$_POST['password']);
+    $hash = password_hash($password, PASSWORD_DEFAULT);
     $mobile=mysqli_real_escape_string($mysqli,$_POST['mobile']);
     $unique=$mysqli->query("SELECT `email`, `mobile_no` FROM $table WHERE `email`='$email' OR `mobile_no` = '$mobile' ");
     if(mysqli_num_rows($unique)==0){
-        $query=$mysqli->query("INSERT INTO $table VALUES('','$name','$email','$password','$mobile')");
+        $query=$mysqli->query("INSERT INTO $table VALUES('','$name','$email','$hash','$mobile')");
         if($query){
             $alert=true;
         }
