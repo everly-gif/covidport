@@ -75,7 +75,7 @@ if($alert) {
 
 
 ?>
-<div class="container">
+<div class="container" id="startpost">
     <form method="post"  style="margin-top:20px;">
     <input type="text" class="form-control" name="title" placeholder="Title of your post" required><br>
     <select name="category" class="form-control" id="category" onchange="checkfor()" required>
@@ -86,12 +86,15 @@ if($alert) {
     </select><br>
     <input type="text" id="short-desc" class="form-control" name="short-desc" placeholder="A short description of your post" required><br>
     <textarea id="editor" name="editor" required></textarea><br>
-    <input type="submit" class="btn btn-success" name="submit" type="submit">
+    <input type="submit" class="btn btn-success" name="submit" value="Post" >
     </form>
 </div>
 <?php include './partials/footer.php';?>
 <script>
-CKEDITOR.replace('editor');
+// CKEDITOR.replace('editor');
+CKEDITOR.replace( 'editor', {
+        height: 400
+    } );
 function checkfor() {
         if (document.getElementById("help").selected) {
             

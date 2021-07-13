@@ -21,13 +21,13 @@ include './partials/db.php';?>
 </head>
 <body>
 <?php include './partials/header.php';?>
-<div class="container">
+<div class="container" style="margin-top:40px;">
     <h4 style="text-align:center;">Donate or Volunteer to Organizations that are providing COVID-19 Relief</h4><br>
     <h6  style="text-align:center;"><a href="submit-org.php" style="text-align:center;color:green;">Submit an Org</a></h6>
     <div class="container search-bar">
     <form style="margin-top:30px; " method="POST" class="d-flex">
         <input type="search" name="search" id="search" class="form-control" placeholder="Search by place , org or field of relief" aria-label="Search">
-        <button class="btn btn-outline-success search"  type="submit" name="submit" >Search</button>
+        <button class="btn btn-success search"  type="submit" name="submit" >Search</button>
        
     </form>
 </div>
@@ -64,7 +64,8 @@ else{
   <div class="card-body">
     <h5 class="card-title"><?php echo $searchresults['org'];?></h5>
     <p class="card-text"><?php echo $searchresults['field'];?> </p>
-    <a href="<?php echo $searchresults['website'];?>" target="_blank" class="btn  btn-outline-success">Visit Website</a>
+    <div style="text-align:right;">
+    <a href="<?php echo $searchresults['website'];?>" target="_blank" class="btn  btn-success">Visit Website</a></div>
   </div>
 </div>
 <?php endforeach;}

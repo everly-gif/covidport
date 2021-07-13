@@ -41,8 +41,29 @@ if(isset($_POST['deleteacc'])){
 <body>
 
 <?php include './partials/header.php';?>
-<div class="container d-flex justify-content-between main">
-<div>
+<div class="d-flex justify-content-between">
+<div class="container main1">
+<h3 class="mb-4">Details</h3>
+<?php 
+$id=$_SESSION['user_id'];
+$query="SELECT * FROM `users` WHERE `id` = $id";
+$result=$mysqli->query($query);
+if(mysqli_num_rows($result)>0){
+while($data=$result->fetch_assoc()){
+    echo '<p>Name : '.$data['name'].'</p>';
+    echo '<p>Email : '.$data['email'].'</p>';
+    echo '<p>Mobile No : '.$data['mobile_no'].'</p>';
+    echo '<button type="button" class="btn btn-danger my-2" onclick="deleteacc('.$id.')">Delete Account</button>';
+}
+}
+else{
+    echo '<p>No comments have been Made.</p>';
+}
+?>
+
+</div>
+<div class="container d-flex justify-content-between flex-column main">
+<div class="posts">
 <h3>Posts</h3>
 <?php 
 $id=$_SESSION['user_id'];
@@ -54,11 +75,12 @@ while($data=$result->fetch_assoc()){
 }
 }
 else{
-    echo '<p>No Posts have been Made.</p>';
+    echo '<br><p>No Posts have been Made.</p>';
 }
 ?>
 </div>
-<div>
+<div class="comments">
+
 <h3>Comments</h3>
 <?php 
 $id=$_SESSION['user_id'];
@@ -70,28 +92,10 @@ while($data=$result->fetch_assoc()){
 }
 }
 else{
-    echo '<p>No comments have been Made.</p>';
+    echo '<br><p>No comments have been Made.</p>';
 }
 ?>
 </div>
-<div>
-<h3>Details</h3>
-<?php 
-$id=$_SESSION['user_id'];
-$query="SELECT * FROM `users` WHERE `id` = $id";
-$result=$mysqli->query($query);
-if(mysqli_num_rows($result)>0){
-while($data=$result->fetch_assoc()){
-    echo '<p>Name : '.$data['name'].'</p>';
-    echo '<p>Email : '.$data['email'].'</p>';
-    echo '<p>Mobile No : '.$data['mobile_no'].'</p>';
-    echo '<button type="button" class="btn btn-danger" onclick="deleteacc('.$id.')">Delete Account</button>';
-}
-}
-else{
-    echo '<p>No comments have been Made.</p>';
-}
-?>
 </div>
 </div>
 <?php include './partials/footer.php';?>
