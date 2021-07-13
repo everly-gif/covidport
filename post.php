@@ -43,8 +43,8 @@ if(!$_GET['id']){
 include './partials/header.php';
 
 ?>
-<div class="big-container">
-<div class="container">
+<div class="big-container container">
+<div class=" my-5 box-1 container">
 <?php
   $table="post";
   if(isset($_GET['id']) && $_GET['id']>0){
@@ -53,25 +53,28 @@ include './partials/header.php';
     $result=$mysqli->query($sql);
     if(mysqli_num_rows($result)){
         $data=mysqli_fetch_assoc($result);
-        echo '
-        <h1>'.$data['title'].'</h1><br>';
+        echo '<div class="d-flex "><div>
+        <h3 style="margin-bottom:30px;">'.$data['title'].'</h3></div><br>';
         if(isset($_SESSION['loggedin'])){
           if(isset($_SESSION['user_id']) && $_SESSION['user_id']==$data['user_id']){
-            echo '<span><button type="button" class="btn btn-danger " onclick="deletepost('.$id.');">Delete</button></span><br><br>';
+            echo '<div><span><button type="button" class="btn btn-danger del " onclick="deletepost('.$id.');">Delete</button></span></div>';
           }
         }
-        echo '
+  
+     
+        echo '</div>
         
         <p>'."Posted by ".$data['author']." at ".$data['date_published']." in ".'<span style="color:red;">'.$data['category'].'</span></p>
-        <h6><em><strong>'.$data['short-desc'].'</em></strong></h6><br>
-        <div>'.$data['content'].'</div><br>
+        <h6><em><strong>'.$data['short-desc'].'</em></strong></h6><br><br>
+        <div><div class="post-cont">'.$data['content'].'</div></div><br>
         ';
     }
   }
 
 ?>
-</div> 
-<div class="container">
+
+
+<div>
     
     <form method="POST" id="mainform">
         <textarea  class="form-control" id="comment_content" placeholder="Leave a comment"></textarea><br>
@@ -86,7 +89,9 @@ include './partials/header.php';
     
     
     <div id="display-comment"></div>
-</div>   
+  
+</div>
+</div> 
 </div>
 <?php include './partials/footer.php';?>
 

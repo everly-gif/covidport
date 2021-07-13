@@ -23,7 +23,7 @@
     color:#2C2E43 !important;
 }
 .search{
-    
+
     width:19%;
     margin-left:1%;
 }
@@ -62,27 +62,22 @@ input[type="search"]{
 }
 .thread-list h3{
     margin-top:50px;
-    
+
 }
-.card{
-    box-shadow: 5px 5px 15px #EEDCC9;
-    border-radius: 25px;
-    border:1px solid #2C2E43;
-}
+
+
 .left{
     text-align: right;
 }
-.card{
-    margin:20px 0px;
-}
+
 footer{
     text-align: center;
     background-color: #2C2E43;
     color:white;
     padding:10px;
     margin-top:70px;
-   
-    
+
+
 }
 .click{
     border-radius: 20px;
@@ -99,13 +94,13 @@ footer p{
     margin-top:20px;
 }
 .jumbo{
-    
+
     padding:30px;
     border-radius: 20px;
     margin-top: 30px;
     box-shadow: 5px 5px 15px #EEDCC9;
-   
-   
+
+
 }
 .login{
     width:140px;
@@ -138,13 +133,13 @@ footer p{
     margin-top:11px;
     border: none;
   }
-  
-  
-  
-  
- 
+
+
+
+
+
   .dropdown-content {
-    
+
     position: absolute;
     background-color: #fff;
     min-width: 135px;
@@ -152,15 +147,15 @@ footer p{
     box-shadow: 1px 1px 2px #ddd;
     display: none;
   }
-  
-  
+
+
   .dropdown-content a {
     text-decoration: none;
     display: block;
     color: black;
     padding: 12px 16px;
-    
-    
+
+
   }
   .dropdown-content .nav-link{
       margin:0;
@@ -172,14 +167,40 @@ footer p{
   .dropdown-content a:hover {
       background-color: #f1f1f1;
     }
-  
-  
+
+
   .dropdown:hover .dropdown-content {
       display: block;
     }
-  
- 
+
+
   .link{
       color:#3c48cc;
       font-size: 14px;
   }
+  .post-cont{
+      max-width:90%;
+  }
+  .box-1{
+       width:90%; 
+  }
+  .box-2 h5{
+     color:orangered;
+
+  }
+  .del{
+      margin:0px 20px;
+  }
+  .box-2 p {
+      color: #3c48cc;
+      margin-bottom: 0px;
+  }
+  .box-2{
+      padding: 0px 30px ;
+      width:30%;
+
+  }
+ .reply{
+     
+     margin-bottom:15px;
+ }
