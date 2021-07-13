@@ -93,10 +93,10 @@ else{
    <div><?php echo $searchresults['author']." ". "needs help"; ?></div> <div><?php echo $searchresults['date_published'];?></div>
   </div>
   <div class="card-body">
-    <h5 class="card-title"><?php echo $searchresults['title'];?></h5>
-    <p class="card-text"><?php echo $searchresults['short-desc'];?> </p>
+    <h5 class="card-title"><?php echo stripslashes($searchresults['title']);?></h5>
+    <p class="card-text"><?php echo stripslashes($searchresults['short-desc']);?> </p>
     <div class="left">
-    <a href="post.php?id=<?php echo $searchresults['post_id'];?>" class="btn  btn-success click">Help Out</a>
+    <a href="post.php?id=<?php echo stripslashes($searchresults['post_id']);?>" class="btn  btn-success click">Help Out</a>
    </div>
   </div>
 </div>
