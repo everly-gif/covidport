@@ -71,7 +71,7 @@ $query="SELECT * FROM `post` WHERE `user_id` = '$id' ORDER BY `date_published` D
 $result=$mysqli->query($query);
 if(mysqli_num_rows($result)>0){
 while($data=$result->fetch_assoc()){
-    echo '<p><a href="post.php?id='.$data['post_id'].'">'.$data['title'].'</a> in ' .$data['category'].'</p>';
+    echo '<p><a href="post.php?id='.$data['post_id'].'">'.stripslashes($data['title']).'</a> in ' .$data['category'].'</p>';
 }
 }
 else{

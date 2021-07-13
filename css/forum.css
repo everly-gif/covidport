@@ -8,7 +8,7 @@
     background-color:  #2C2E43  !important;
     padding:10px 70px;
     font-size: 16px ;
-    margin-bottom:20px ;
+    
 }
 .nav-link{
     color:#FFF !important;
@@ -187,4 +187,7 @@ footer p{
   }
  #startpost{
      margin-top:60px;
+ }
+ .cont-1,.cont-2,.cont-3{
+     margin-top: 20px;
  }

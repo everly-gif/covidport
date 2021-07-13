@@ -79,25 +79,21 @@ include './partials/header.php';
 
 ?>
 <div class="container ">
-    <h3 class="text-center">Together, we are stronger</h3>
-    <!-- <form>
-    <h4 class="m-2">Sign Up</h4>
-    <input type="text" class="form-control m-2" placeholder="Enter Name" id="name" name="name" required>
-    <input type="email" class="form-control m-2" placeholder="Enter email" id="email" name="email" required>
-    <input type="password" class="form-control m-2" placeholder="Enter Password" id="password" name="password" required>
-    <input type="tel" class="form-control m-2" pattern="[0-9]{10}" placeholder="Enter number" id="mn" name="mobile" required>
-    <button class="btn btn-danger m-2">Sign up</button>
-    </form> -->
+    <h3 class="text-center my-4">Together, we are stronger</h3>
+    <div class="d-flex flex-column justify-content-center align-items-center">
     <form class="form" method="POST">
     <h4 class="m-2">Sign Up</h4>
+   
     <input type="text" class="form-control m-2" placeholder="Enter Name" id="name" name="name" required>
     <input type="email" class="form-control m-2" placeholder="Enter email" id="email" name="email" required>
     <input type="password" class="form-control m-2" placeholder="Enter Password" id="password" name="password" required>
     <input type="tel" class="form-control m-2" pattern="[0-9]{10}" placeholder="Enter mobile number" id="mn" name="mobile" required>
-    <button class="btn btn-danger m-2" name="submit">Sign up</button>
-    <h4 class="m-2"> Already have an account?</h4>
-    <a class="m-2" href="login.php">Login</a>
+    
+    <button class="btn btn-success m-2 " name="submit">Sign up</button>
+    <h5 class="m-2 text-center "> Already have an account?</h5>
+    <p style="text-align:center;"><a class="m-2 text-center" href="login.php">Login</a></p>
     </form>
+</div>
 </div>
 
 <?php include './partials/footer.php';?>

@@ -5,8 +5,8 @@ $alert=false;
 $erroralert=false;
 
 if(isset($_POST['submit'])){
-    $email=$_POST['email'];
-    $password=$_POST['password'];
+    $email=$mysqli -> real_escape_string($_POST['email']);
+    $password=$mysqli -> real_escape_string($_POST['password']);
     $result=$mysqli->query("SELECT * FROM $table WHERE `email`='$email' AND `password`='$password'");
     $details=$mysqli->query("SELECT `name`,mobile_no FROM $table WHERE email='$email'");
     $id=$mysqli->query("SELECT id FROM $table WHERE email='$email'");
@@ -57,7 +57,7 @@ include './partials/header.php';
 <?php if($alert) {
     
     echo ' <div class="alert alert-success 
-        alert-dismissible fade show" role="alert" style="margin-bottom:0px;;border-radius:0px;">
+        alert-dismissible fade show" role="alert" style="margin:0px;;border-radius:0px;">
         <strong>Success!</strong>  
          You are now logged in! 
         <button type="button" class="close"
@@ -65,13 +65,13 @@ include './partials/header.php';
             <span aria-hidden="true">×</span> 
         </button> 
     </div> ';
-    echo '<meta http-equiv="refresh" content="2;url=forum.php" />';
+     echo '<meta http-equiv="refresh" content="2;url=forum.php" />';
      
    }
    if($erroralert) {
     
     echo ' <div class="alert alert-danger 
-        alert-dismissible fade show" role="alert" style="margin-bottom:0px;border-radius:0px;"> 
+        alert-dismissible fade show" role="alert" style="margin:0px;border-radius:0px;"> 
        <strong>Error!</strong> '. $erroralert.'<button type="button" class="close" 
        data-dismiss="alert" aria-label="Close">
        <span aria-hidden="true">×</span> 
@@ -82,24 +82,18 @@ include './partials/header.php';
 
 ?>
 <div class="container ">
-    <h3 class="text-center">Together, we are stronger</h3>
-    <!-- <form>
-    <h4 class="m-2">Sign Up</h4>
-    <input type="text" class="form-control m-2" placeholder="Enter Name" id="name" name="name" required>
-    <input type="email" class="form-control m-2" placeholder="Enter email" id="email" name="email" required>
-    <input type="password" class="form-control m-2" placeholder="Enter Password" id="password" name="password" required>
-    <input type="tel" class="form-control m-2" pattern="[0-9]{10}" placeholder="Enter number" id="mn" name="mobile" required>
-    <button class="btn btn-danger m-2">Sign up</button>
-    </form> -->
+    <h3 class="text-center my-4">Together, we are stronger</h3>
+    <div class="d-flex flex-column justify-content-center align-items-center">
     <form class="form" method="POST">
     <h4 class="m-2">Login</h4>
     
     <input type="email" class="form-control m-2" placeholder="Enter email" id="email" name="email" required>
     <input type="password" class="form-control m-2" placeholder="Enter Password" id="password" name="password" required>
     <button class="btn btn-success m-2" name="submit">Login</button><br><br>
-    <h4 class="m-2">Don't have an account?</h4>
-    <a class="m-2" href="sign-up.php">Sign up</a>
+    <h5 class="m-2 text-center "> Don't have an account?</h5>
+    <p style="text-align:center;"><a class="m-2 text-center" href="sign-up.php">Sign Up</a></p>
     </form>
+    </div>
 </div>
 
 <?php include './partials/footer.php';?>
