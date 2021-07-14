@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-between"">
 <div class="container-fluid d-flex justify-content-between">
 <div>
-<a class="navbar-brand" href="index.html">CovidPort</a><br><div id="google_translate_element"></div></div>
+<a class="navbar-brand" href="home.php">CovidPort</a><br><div id="google_translate_element"></div></div>
 
 <div>
 <div>
