@@ -19,7 +19,7 @@ This  will help common people to understand the threaten levels of the virus in 
 
 The users shall now be able to also discuss with each other and  rule out fake news and buzz , discuss recovery routines and also if in need for leads can ask for help, where potential connects can help them out.
 
-The solution we have developed is totally user oriented hence one of the best methods of impact metrics which can be used to analyse its effect. we plan to conduct surveys regularly to see if  the objective is met by taking into consideration the common people’s expectations and preferences.
+The solution we have developed is totally user oriented hence one of the best methods of impact metrics which can be used to analyse its effect. We plan to conduct surveys regularly to see if  the objective is met by taking into consideration the common people’s expectations and preferences.
 
 # Tools and Technologies
 
