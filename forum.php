@@ -39,7 +39,7 @@ $query="SELECT * FROM `post` WHERE `category`='recovery-stories'";
 $result=$mysqli->query($query);
 while($data=$result->fetch_assoc()){
   echo '<div class="container"><p style="margin-bottom:0;color:orangered;font-size:15px;">'.$data['author'].' shared </p>';
-  echo '<p style="margin-bottom:2px;" ><a class="link" href="post.php?id='.$data['post_id'].'">'.$data['title'].' </a></p></div><br>';
+  echo '<p style="margin-bottom:2px;" ><a class="link" href="post.php?id='.$data['post_id'].'">'.stripslashes($data['title']).' </a></p></div><br>';
 }
 
 ?>
@@ -119,7 +119,7 @@ $query="SELECT * FROM `post` WHERE `category`='help'";
 $result=$mysqli->query($query);
 while($data=$result->fetch_assoc()){
   echo '<div class="container"><p  style="margin-bottom:0;color:orangered;font-size:15px;">'.$data['author'].' needs help </p>';
-  echo '<p style="margin-bottom:2px;" ><a class="link" href="post.php?id='.$data['post_id'].'">'.$data['title'].' </a></p></div><br>';
+  echo '<p style="margin-bottom:2px;" ><a class="link" href="post.php?id='.$data['post_id'].'">'.stripslashes($data['title']).' </a></p></div><br>';
 }
 
 ?>

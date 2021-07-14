@@ -56,7 +56,7 @@ include './partials/header.php';
         
         <p>'."Posted by ".$data['author']." at ".$data['date_published']." in ".'<span style="color:red;">'.$data['category'].'</span></p>
         <h6><em><strong>'.stripslashes($data['short-desc']).'</em></strong></h6><br><br>
-        <div><div class="post-cont">'.$data['content'].'</div></div><br>
+        <div><div class="post-cont text-justify">'.$data['content'].'</div></div><br>
         ';
     }
   }
