@@ -32,6 +32,6 @@ HTML5, CSS3, Bootstrap4, JavaScript, Jquery, AJAX, PHP, Ckeditor4, Chart js  and
 
 
 # Contributors
-S.Everly Precia (@everly-gif)
-Kaviyashre RP (@RPK2103)
-Mansi Yadhav (@Mansi494)
+S.Everly Precia (@everly-gif) <br>
+Kaviyashre RP (@RPK2103)<br>
+Mansi Yadhav (@Mansi494)<br>
