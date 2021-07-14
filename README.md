@@ -31,7 +31,7 @@ HTML5, CSS3, Bootstrap4, JavaScript, Jquery, AJAX, PHP, Ckeditor4, Chart js  and
 
 
 
-# Contributors
+# Team Tech Crunchers
 S.Everly Precia (@everly-gif) <br>
 Kaviyashre RP (@RPK2103)<br>
 Mansi Yadhav (@Mansi494)<br>
